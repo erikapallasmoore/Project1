@@ -24,9 +24,15 @@
 	float: left;
 }*/
 
+.score {
+	height: 300px;
+	width: 300px;
+	float: left;
+}
+
 div#memoryBoard{
 	background: #CCC;
-	border: #999 1 px solid;
+	border: #999 1px solid;
 	width: 800px;
 	height: 540px;
 	padding: 24px;
@@ -36,7 +42,8 @@ div#memoryBoard{
 div#memoryBoard > div{
 	background: blue no-repeat;
 	border: #000 1px solid;
-	width: 71px;
+	width: 100px;
+	height: 100px;
 	float: left;
 	margin: 10px;
 	padding: 20px;

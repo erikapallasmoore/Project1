@@ -28,10 +28,17 @@ $(document).ready(function() {
 	});
 });
 
-var cardArray = ['Q','Q','W','W','E','E','R','R','T','T','Y','Y','U','U','I','O','O','P','P','A','A','S','S',];
+ //var cardArray = ['Q','Q','W','W','E','E','R','R','T','T','Y','Y','U','U','I', 'I','O','O','P','P','A','A','S','S'];
+var cardArray = ['Q','Q','L','L'];
 var cardValues = [];
 var cardTileIds = [];
 var tilesFlipped = 0;
+
+var player = true;
+
+// function PlayerX() {
+// 	if 
+// }
 
 //shuffle method
 Array.prototype.cardTileShuffle = function(){
@@ -42,6 +49,18 @@ Array.prototype.cardTileShuffle = function(){
 		this[j] = this[i];
 		this[i] = temp;
 	}
+}
+
+function PlayerMove(){
+	if (player){
+		var currentPlayer = "PlayerOne"
+		console.log(currentPlayer)
+	} else {
+		var currentPlayer = "PlayerTwo"
+		console.log(currentPlayer)
+
+	}
+
 }
 
 function newBoard(){
@@ -56,7 +75,10 @@ function newBoard(){
 	document.getElementById('memoryBoard').innerHTML = output;
 }
 
+
+var counter = 0;
 function memoryFlipTile(tile, val){
+	
 	//console.log('Hit flip function: ' + val);
 	if(tile.innerHTML == "" && cardValues.length < 2) {
 		tile.style.background = '#FFF';
@@ -69,13 +91,27 @@ function memoryFlipTile(tile, val){
 			cardTileIds.push(tile.id);
 			if(cardValues[0] == cardValues[1]){
 				tilesFlipped += 2;
+				counter++
+				if(player){
+					var currentScore1 = parseInt($(".counterOne").text());
+					$(".counterOne").text(currentScore1+1)
+				}else{
+					var currentScore = parseInt($(".counterTwo").text());
+					$(".counterTwo").text(currentScore+1)
+
+				}
+
+				console.log(counter);
+				console.log(tilesFlipped);
 				//clear both arrays
 				cardValues = [];
 				cardTileIds = [];
+			 
 				//check to see if board is cleared
 				if(tilesFlipped == cardArray.length){
-					alert("Board Cleared. Generating New Board");
-					document.getElementById('memoryBoard').innterHTML = "";
+					// if ()
+					// alert("WINNER!!!! You're SO smart! Click OK to play again.");
+					document.getElementById('memoryBoard').innerHTML = "";
 					newBoard();
 				}
 			} else {
@@ -90,9 +126,17 @@ function memoryFlipTile(tile, val){
 					//clear both arrays
 					cardValues = [];
 					cardTileIds = [];
+					player = !player;
 				}
-				setTimeout(flipTwoBack, 1000);
+				setTimeout(flipTwoBack, 500);
 			}
+
+			PlayerMove();
+			console.log("no match!")
 		}
 	}
 }
+
+
+
+
