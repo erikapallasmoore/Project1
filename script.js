@@ -28,11 +28,13 @@ $(document).ready(function() {
 	});
 });
 
- var cardArray = ['Q','Q','W','W','E','E','R','R','T','T','Y','Y','U','U','I', 'I','O','O','P','P','A','A','S','S'];
-//var cardArray = ['Q','Q','L','L'];
+ //var cardArray = ['Q','Q','W','W','E','E','R','R','T','T','Y','Y','U','U','I', 'I','O','O','P','P','A','A','S','S'];
+var cardArray = ['Q','Q','L','L','H','H','B','B'];
 var cardValues = [];
 var cardTileIds = [];
 var tilesFlipped = 0;
+var currentScore1 = 0;
+var currentScore2 = 0;
 
 var player = true;
 
@@ -93,11 +95,11 @@ function memoryFlipTile(tile, val){
 				tilesFlipped += 2;
 				counter++
 				if(player){
-					var currentScore1 = parseInt($(".counterOne").text());
+					currentScore1 = parseInt($(".counterOne").text());
 					$(".counterOne").text(currentScore1+1)
 				}else{
-					var currentScore = parseInt($(".counterTwo").text());
-					$(".counterTwo").text(currentScore+1)
+					currentScore2 = parseInt($(".counterTwo").text());
+					$(".counterTwo").text(currentScore2+1)
 
 				}
 
@@ -109,10 +111,20 @@ function memoryFlipTile(tile, val){
 			 
 				//check to see if board is cleared
 				if(tilesFlipped == cardArray.length){
-					if ()
+					
+
+					$('.winPage').text(highScore);
+					$('.Home').hide();
+					$('.winPage').show();
+
 					// alert("WINNER!!!! You're SO smart! Click OK to play again.");
 					document.getElementById('memoryBoard').innerHTML = "";
 					newBoard();
+					$('.card').click(function(event){
+						var tile = $(this);
+						var val = cardArray[tile.attr('id')];
+						memoryFlipTile(tile[0], val);
+					});
 				}
 			} else {
 				function flipTwoBack(){
@@ -137,6 +149,19 @@ function memoryFlipTile(tile, val){
 	}
 }
 
+var highScore = function(){
+	if (currentScore1 > currentScore2){
+		return "Player One Winner!";
+	}
 
+	else if (currentScore2 > currentScore1){
+		return "Player Two Winner";
+	}
+
+	else {
+		return "Tie";
+	}
+
+}
 
 
