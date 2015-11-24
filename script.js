@@ -1,9 +1,7 @@
 
 //reset button
 
-// document.querySelector("#status_container button").addEventListener('click', function(event){
-// 	window.location.reload(false);
-// })
+
 
 //epm first attempt. look back to this to simplify
 // //listening for clicks on individual divs
@@ -67,6 +65,7 @@ function PlayerMove(){
 
 function newBoard(){
 	console.log('hit newboard');
+	$('.winPage').hide();
 	tilesFlipped = 0;
 	var output = '';
 	cardArray.cardTileShuffle();
@@ -113,18 +112,21 @@ function memoryFlipTile(tile, val){
 				if(tilesFlipped == cardArray.length){
 					
 
-					$('.winPage').text(highScore);
+					$('#winPageLabel').text(highScore);
 					$('.Home').hide();
 					$('.winPage').show();
 
 					// alert("WINNER!!!! You're SO smart! Click OK to play again.");
-					document.getElementById('memoryBoard').innerHTML = "";
-					newBoard();
-					$('.card').click(function(event){
-						var tile = $(this);
-						var val = cardArray[tile.attr('id')];
-						memoryFlipTile(tile[0], val);
-					});
+					// document.getElementById('memoryBoard').innerHTML = "";
+					// newBoard();
+					// $('.card').click(function(event){
+					// 	var tile = $(this);
+					// 	var val = cardArray[tile.attr('id')];
+					// 	memoryFlipTile(tile[0], val);
+					// });
+					document.querySelector(".winPage button").addEventListener('click', function(event){
+						window.location.reload(false);
+					})
 				}
 			} else {
 				function flipTwoBack(){
@@ -151,16 +153,22 @@ function memoryFlipTile(tile, val){
 
 var highScore = function(){
 	if (currentScore1 > currentScore2){
-		return "Player One Winner!";
+		return "Player One ";
+		// document.querySelector(".winPage button").addEventListener('click', function(event){
+	// window.location.reload(false);
+// })
 	}
 
 	else if (currentScore2 > currentScore1){
-		return "Player Two Winner";
+		return "Player Two ";
 	}
 
 	else {
-		return "Tie";
+		return "Tie, no one ";
 	}
+	// document.querySelector(".winPage button").addEventListener('click', function(event){
+	// window.location.reload(false);
+	// })
 
 }
 
