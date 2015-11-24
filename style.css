@@ -1,9 +1,9 @@
-.card {
+/*first attempt
+*/
+/*.card {
 	height: 100px;
 	width: 100px;
 	float: left;
-	/*background-color: black;*/
-/*	border-color: black;*/
 	border-style: solid;
 	border-width: 2px;
 	border-color: black;
@@ -13,14 +13,35 @@
 
 .cards {
 	height: 450px;
-	width: 630px;
+	width: 60px;
 	padding-left: 15px;
 	padding-top: 20px;
-	/*background-color: lavender;*/
-}
+	
 
 .score {
 	height: 400px;
 	width: 300px;
 	float: left;
+}*/
+
+div#memoryBoard{
+	background: #CCC;
+	border: #999 1 px solid;
+	width: 800px;
+	height: 540px;
+	padding: 24px;
+	margin: 0px auto; 
+}
+
+div#memoryBoard > div{
+	background: blue no-repeat;
+	border: #000 1px solid;
+	width: 71px;
+	float: left;
+	margin: 10px;
+	padding: 20px;
+	font-size: 64px;
+	cursor: pointer;
+	text-align: center;
+
 }
