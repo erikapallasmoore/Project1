@@ -28,8 +28,8 @@ $(document).ready(function() {
 	});
 });
 
- //var cardArray = ['Q','Q','W','W','E','E','R','R','T','T','Y','Y','U','U','I', 'I','O','O','P','P','A','A','S','S'];
-var cardArray = ['Q','Q','L','L'];
+ var cardArray = ['Q','Q','W','W','E','E','R','R','T','T','Y','Y','U','U','I', 'I','O','O','P','P','A','A','S','S'];
+//var cardArray = ['Q','Q','L','L'];
 var cardValues = [];
 var cardTileIds = [];
 var tilesFlipped = 0;
@@ -109,7 +109,7 @@ function memoryFlipTile(tile, val){
 			 
 				//check to see if board is cleared
 				if(tilesFlipped == cardArray.length){
-					// if ()
+					if ()
 					// alert("WINNER!!!! You're SO smart! Click OK to play again.");
 					document.getElementById('memoryBoard').innerHTML = "";
 					newBoard();
