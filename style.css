@@ -1,38 +1,62 @@
-/*first attempt
-*/
-/*.card {
-	height: 100px;
-	width: 100px;
-	float: left;
-	border-style: solid;
-	border-width: 2px;
-	border-color: black;
 
-
+.background {
+	background-color: black;
+	background-size: cover; 
 }
 
-.cards {
-	height: 450px;
-	width: 60px;
-	padding-left: 15px;
-	padding-top: 20px;
-	
+.home{
+	background-color: black;
+}
 
-.score {
-	height: 400px;
-	width: 300px;
-	float: left;
-}*/
+.head{
+	text-align: center;
+	font-family: Nosifer;
+	font-size: 50px;
+	color: red;
+	background-color: black;
+}
 
 .score {
 	height: 300px;
 	width: 300px;
 	float: left;
+	background-color: black;
+}
+
+.playerOne{
+	text-align: center;
+	font-family: Nosifer;
+	color: red;
+	font-size: 25px;
+}
+
+.counterOne {
+	text-align: center;
+	font-family: Nosifer;
+	color: red;
+	font-size: 25px;
+
+
+}
+
+.playerTwo{
+	text-align: center;
+	font-family: Nosifer;
+	color: red;
+	font-size: 25px;
+}
+
+.counterTwo{
+	text-align: center;
+	font-family: Nosifer;
+	color: red;
+	font-size: 25px;
+
 }
 
 div#memoryBoard{
-	background: #CCC;
-	border: #999 1px solid;
+	background: black;
+	
 	width: 800px;
 	height: 540px;
 	padding: 24px;
@@ -40,7 +64,7 @@ div#memoryBoard{
 }
 
 div#memoryBoard > div{
-	background: blue no-repeat;
+	background: url("images/card.gif"); no-repeat;
 	border: #000 1px solid;
 	width: 100px;
 	height: 100px;
@@ -50,5 +74,34 @@ div#memoryBoard > div{
 	font-size: 64px;
 	cursor: pointer;
 	text-align: center;
+	background-color: black;
 
+}
+
+img {
+	margin-left: -21px;
+	margin-top: -48px;
+}
+
+.winpage {
+	text-align: center;
+	font-family: Nosifer;
+	color: red;
+	font-size: 40px;
+	margin: auto 0;
+}
+
+#winPageLabel{
+	text-align: center;
+	font-family: Nosifer;
+	color: red;
+	font-size: 40px;
+
+}
+
+.pleaseWork{
+	text-align: center;
+	font-family: Nosifer;
+	color: red;
+	font-size: 40px;
 }

@@ -8,102 +8,55 @@
     <link rel="stylesheet" media="screen" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.5/css/bootstrap.min.css">
 
 	<link rel="stylesheet" type="text/css" href="style.css">
-
+<link href='https://fonts.googleapis.com/css?family=Nosifer' rel='stylesheet' type='text/css'>
 </head>
 
-<body>
-<!-- first board attempt -->
-<!-- <div class="container">
-	<div class="row">
-		<div class="col-lg-7">
+<body class="background">
+	<div class="Home">
+	<div class="head">
+	<h1>MASK MATCH</h1>
+	</div>
 
-			<div class="card card1">
-			</div>
+	<div class="col-lg-8" id="memoryBoard"></div>
 
-			<div class="card" "card2">
-			</div>
-
-			<div class="card" "card3">
-			</div>
-
-			<div class="card" "card4">
-			</div>
-
-			<div class="card" "card5">
-
-			</div>
-
-			<div class="card" "card6">
-			</div>
-		
-			<div class="card" "card7">
-			</div>
-
-			<div class="card" "card8">
-			</div>
-
-			<div class="card" "card9">
-			</div>
-			
-			<div class="card" "card10">
-			</div>
-
-			<div class="card" "card11">
-			</div>
-
-			<div class="card" "card12">
-			</div>
-
-			<div class="card" "card13">
-			</div>
-
-			<div class="card" "card14">
-			</div>
-
-			<div class="card" "card15">
-			</div>
-			
-			<div class="card" "card16">
-			</div>
-
-			<div class="card" "card17">
-			</div>
-
-			<div class="card" "card18">
-			</div>
-
-			<div class="card" "card19">
-			</div>
-
-			<div class="card" "card20">
-			</div>
-
-			<div class="card" "card21">
-			</div>
-			
-			<div class="card" "card22">
-			</div>
-
-			<div class="card" "card23">
-			</div>
-
-			<div class="card" "card24">
+	<div class="score">
+<br>
+<br>
+<br>
+<br>
+	<button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">How to Play</button>
+		<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+			<div class="modal-dialog" role="document">
+				<div class="modal-content">
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span></button>
+						<h4 class="modal-title" id="myModalLabel">RULES! ...are meant to be broken. (but not these ones!)
+						</h4>
+					</div>
+					<div class="modal-body">
+						<p>Player one takes the first turn.</p>
+						<p>During player's turn, player flips two cards.</p>
+						<p>If player uncovers a matching pair of cards, player is awarded a point and takes another turn.</p>
+						<p>If no match is made, it is Player Two's turn.</p>
+						<p>Player with the most points after all cards are matched is the winner.</p>
+						<p>If score is equal, it is a tie.</p>
+					</div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+					</div>
+				</div>
 			</div>
 		</div>
+<br>
+<br>
+<br>
+<br>
 
-	
-		<div class="col-lg-4 ">
-			<span class="score">
-			<button type="button">Restart Game</button>
-			</span>
-		</div>
-	</div> -->
-<div class="Home">
-<div id="memoryBoard"></div>
-
-<div class="score">
 	<span class="playerOne">Player 1: </span>
 		<span class="counterOne">0</span>
+		<br>
+		<br>
+		<br>
 	<span class="playerTwo">Player 2: </span>
 		<span class="counterTwo">0</span>
 	<span class="endScore"></span>
@@ -111,7 +64,8 @@
 </div>
 
 <div class="winPage">
-<label id="winPageLabel"></label><label>is the winner</label>
+<label id="winPageLabel"></label><label class="pleaseWork" style="padding-left: .5em"> is the winner!</label>
+<br>
 <button type="button">Restart</button>
 </div>
 

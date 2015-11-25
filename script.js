@@ -3,18 +3,7 @@
 
 
 
-//epm first attempt. look back to this to simplify
-// //listening for clicks on individual divs
 
-
-// $('.card').each(function(i, element){
-// 	//get image url from list
-// 	//create img tag inside of element
-// });
-
-// a.concat(a).sort(function() { return 0.5 - Math.random() });
-
-//window.addEventlistener('load', newBoard);
 $(document).ready(function() {
 	console.log('document ready');
 	newBoard();
@@ -26,19 +15,16 @@ $(document).ready(function() {
 	});
 });
 
- //var cardArray = ['Q','Q','W','W','E','E','R','R','T','T','Y','Y','U','U','I', 'I','O','O','P','P','A','A','S','S'];
+//var cardArray = ['<img src="images/mask1.jpg">','<img src="images/mask1.jpg">','<img src="images/mask2.jpg">','<img src="images/mask2.jpg">'];
 var cardArray = ['<img src="images/mask1.jpg">','<img src="images/mask1.jpg">','<img src="images/mask2.jpg">','<img src="images/mask2.jpg">','<img src="images/mask3.jpg">','<img src="images/mask3.jpg">','<img src="images/mask4.jpg">','<img src="images/mask4.jpg">','<img src="images/mask5.jpg">','<img src="images/mask5.jpg">','<img src="images/mask6.jpg">','<img src="images/mask6.jpg">','<img src="images/mask7.jpg">','<img src="images/mask7.jpg">','<img src="images/mask8.jpg">','<img src="images/mask8.jpg">','<img src="images/mask9.jpg">','<img src="images/mask9.jpg">','<img src="images/mask10.jpg">','<img src="images/mask10.jpg">','<img src="images/mask11.jpg">','<img src="images/mask11.jpg">','<img src="images/mask12.jpg">','<img src="images/mask12.jpg">'];
 var cardValues = [];
 var cardTileIds = [];
 var tilesFlipped = 0;
 var currentScore1 = 0;
 var currentScore2 = 0;
-
 var player = true;
 
-// function PlayerX() {
-// 	if 
-// }
+
 
 //shuffle method
 Array.prototype.cardTileShuffle = function(){
@@ -65,7 +51,7 @@ function PlayerMove(){
 	}
 
 }
-
+//build the board
 function newBoard(){
 	console.log('hit newboard');
 	$('.winPage').hide();
@@ -79,11 +65,7 @@ function newBoard(){
 	document.getElementById('memoryBoard').innerHTML = output;
 }
 
-function cardImage(){
-	if (cardArray.v=== "Q"){
-		console.log("this is Q")
-	}
-}
+
 
 var counter = 0;
 function memoryFlipTile(tile, val){
@@ -112,6 +94,7 @@ function memoryFlipTile(tile, val){
 
 				console.log(counter);
 				console.log(tilesFlipped);
+
 				//clear both arrays
 				cardValues = [];
 				cardTileIds = [];
@@ -124,14 +107,7 @@ function memoryFlipTile(tile, val){
 					$('.Home').hide();
 					$('.winPage').show();
 
-					// alert("WINNER!!!! You're SO smart! Click OK to play again.");
-					// document.getElementById('memoryBoard').innerHTML = "";
-					// newBoard();
-					// $('.card').click(function(event){
-					// 	var tile = $(this);
-					// 	var val = cardArray[tile.attr('id')];
-					// 	memoryFlipTile(tile[0], val);
-					// });
+					//restart button
 					document.querySelector(".winPage button").addEventListener('click', function(event){
 						window.location.reload(false);
 					})
@@ -141,16 +117,16 @@ function memoryFlipTile(tile, val){
 					//Flip the 2 cards back over
 					var cardOne = document.getElementById(cardTileIds[0]);
 					var cardTwo = document.getElementById(cardTileIds[1]);
-					cardOne.style.background = 'red';
+					cardOne.style.background = "url('images/card.gif')";
 					cardOne.innerHTML = "";
-					cardTwo.style.background = "green";
+					cardTwo.style.background = "url('images/card.gif')";
 					cardTwo.innerHTML = "";
 					//clear both arrays
 					cardValues = [];
 					cardTileIds = [];
 					player = !player;
 				}
-				setTimeout(flipTwoBack, 500);
+				setTimeout(flipTwoBack, 700);
 			}
 
 			PlayerMove();
@@ -162,9 +138,6 @@ function memoryFlipTile(tile, val){
 var highScore = function(){
 	if (currentScore1 > currentScore2){
 		return "Player One ";
-		// document.querySelector(".winPage button").addEventListener('click', function(event){
-	// window.location.reload(false);
-// })
 	}
 
 	else if (currentScore2 > currentScore1){
@@ -174,10 +147,7 @@ var highScore = function(){
 	else {
 		return "Tie, no one ";
 	}
-	// document.querySelector(".winPage button").addEventListener('click', function(event){
-	// window.location.reload(false);
-	// })
 
 }
-cardImage();
+
 
