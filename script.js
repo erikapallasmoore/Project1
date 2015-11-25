@@ -27,7 +27,7 @@ $(document).ready(function() {
 });
 
  //var cardArray = ['Q','Q','W','W','E','E','R','R','T','T','Y','Y','U','U','I', 'I','O','O','P','P','A','A','S','S'];
-var cardArray = ['Q','Q','L','L','H','H','B','B'];
+var cardArray = ['<img src="images/mask1.jpg">','<img src="images/mask1.jpg">','<img src="images/mask2.jpg">','<img src="images/mask2.jpg">','<img src="images/mask3.jpg">','<img src="images/mask3.jpg">','<img src="images/mask4.jpg">','<img src="images/mask4.jpg">','<img src="images/mask5.jpg">','<img src="images/mask5.jpg">','<img src="images/mask6.jpg">','<img src="images/mask6.jpg">','<img src="images/mask7.jpg">','<img src="images/mask7.jpg">','<img src="images/mask8.jpg">','<img src="images/mask8.jpg">','<img src="images/mask9.jpg">','<img src="images/mask9.jpg">','<img src="images/mask10.jpg">','<img src="images/mask10.jpg">','<img src="images/mask11.jpg">','<img src="images/mask11.jpg">','<img src="images/mask12.jpg">','<img src="images/mask12.jpg">'];
 var cardValues = [];
 var cardTileIds = [];
 var tilesFlipped = 0;
@@ -48,6 +48,9 @@ Array.prototype.cardTileShuffle = function(){
 		temp = this[j];
 		this[j] = this[i];
 		this[i] = temp;
+		console.log(cardArray[0]);
+		console.log(cardTileIds[0]);
+		console.log(cardValues[0]);
 	}
 }
 
@@ -76,6 +79,11 @@ function newBoard(){
 	document.getElementById('memoryBoard').innerHTML = output;
 }
 
+function cardImage(){
+	if (cardArray.v=== "Q"){
+		console.log("this is Q")
+	}
+}
 
 var counter = 0;
 function memoryFlipTile(tile, val){
@@ -171,5 +179,5 @@ var highScore = function(){
 	// })
 
 }
-
+cardImage();
 
